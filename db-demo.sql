@@ -1,10 +1,10 @@
---Create database
+-- Create database
 CREATE DATABASE testDB; 
 SHOW DATABASES; 
 DROP DATABASE testDB;
 USE testDB;
 
---Create Customers table
+-- Create Customers table
 CREATE TABLE customers (
     id        INT NOT NULL,
     name      VARCHAR(20) NOT NULL,
@@ -13,7 +13,7 @@ CREATE TABLE customers (
     salary    DECIMAL(18, 2),
     PRIMARY KEY ( id )
 );
---Drop a Table
+-- Drop a Table
 DROP TABLE CUSTOMERS; 
 
 -- INSERT INTO Statement 
@@ -35,7 +35,7 @@ UPDATE CUSTOMERS SET ADDRESS = 'Pune' WHERE ID = 6;
 -- DELETE a customer, whose ID is 6
 DELETE FROM CUSTOMERS WHERE ID = 6; 
 
---display all the records from CUSTOMERS table where SALARY starts with 200
+-- display all the records from CUSTOMERS table where SALARY starts with 200
 SELECT * FROM CUSTOMERS WHERE SALARY LIKE '200%'; 
 
 -- fetch ID, Name and Salary fields of the customers available in CUSTOMERS table
@@ -53,13 +53,13 @@ FROM
 GROUP BY
     name;
 
---To create a PRIMARY KEY constraint on the "ID" column when CUSTOMERS table already exists
+-- To create a PRIMARY KEY constraint on the "ID" column when CUSTOMERS table already exists
 ALTER TABLE CUSTOMER ADD PRIMARY KEY (ID);
 
---Delete Primary Key
+-- Delete Primary Key
 ALTER TABLE CUSTOMERS DROP PRIMARY KEY;
 
---Forgein keys
+-- Forgein keys
 CREATE TABLE ORDERS ( 
        ID          INT        NOT NULL, 
        DATE        DATETIME,  
@@ -67,7 +67,7 @@ CREATE TABLE ORDERS (
        AMOUNT     double, 
        PRIMARY KEY (ID) 
 );
---OR
+-- OR
 ALTER TABLE ORDERS  
    ADD FOREIGN KEY (Customer_ID) REFERENCES CUSTOMERS (ID); 
    
@@ -80,6 +80,3 @@ SELECT
 FROM
     customers
     INNER JOIN orders ON customers.id = orders.customer_id;
-
-
-https://nguyenvanhieu.vn/bai-tap-sql-giai-bai-test-sql-co-ban-fpt-fsoft-2018/
